@@ -30,7 +30,9 @@ bool Window::init()
     m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, NULL, NULL);
 
     if (!m_Window) return false;
-    if (!glewInit()) return false;
-
     glfwMakeContextCurrent(m_Window);
+
+    if (glewInit() != GLEW_OK) return false;
+
+    return true;
 }
