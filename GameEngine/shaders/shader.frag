@@ -1,9 +1,9 @@
 #version 330
 
 smooth in vec3 theColor;
-out vec3 outputColor;
+out vec4 outputColor;
 
 void main()
 {
-    outputColor = vec3(theColor);
+    outputColor = vec4(theColor, 1.0);
 }
